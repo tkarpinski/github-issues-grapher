@@ -23,9 +23,10 @@ namespace github_issues_grapher.Controllers
 			var result = Redirect(@"https://github.com/login/oauth/authorize?scope=repo&client_id=" + clientID);
 			return result;
 		}
-		HttpWebRequest webRequest;
+
 		public ActionResult callback(string code)
 		{
+			return View();
 			try
 			{
 				var req = new WebClient();
@@ -42,13 +43,12 @@ namespace github_issues_grapher.Controllers
 				ViewBag.response = ex.ToString();
 			}
 			
+			
+		}
+
+		public ActionResult Error()
+		{
 			return View();
 		}
-
-		void FinishWebRequest(IAsyncResult result)
-		{
-			webRequest.EndGetResponse(result);
-		}
-
     }
 }
