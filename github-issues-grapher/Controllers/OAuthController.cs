@@ -17,7 +17,9 @@ namespace github_issues_grapher.Controllers
         }
 		public ActionResult authorize()
 		{
-			return Redirect(@"https://github.com/login/oauth/authorize");
+			var clientID = System.Configuration.ConfigurationManager.AppSettings["OAuthClientID"];
+			var result = Redirect(@"https://github.com/login/oauth/authorize?client_id=" + clientID);
+			return result;
 		}
 
 		public ActionResult callback()
