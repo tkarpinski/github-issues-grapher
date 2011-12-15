@@ -15,6 +15,15 @@ namespace github_issues_grapher.Controllers
         {
             return View();
         }
+		public ActionResult authorize()
+		{
+			return Redirect(@"https://github.com/login/oauth/authorize");
+		}
+
+		public ActionResult callback()
+		{
+			return View();
+		}
 
     }
 }
