@@ -37,7 +37,13 @@ namespace github_issues_grapher.Controllers
 				req.QueryString.Add("client_secret", secret);
 				req.QueryString.Add("code", code);
 				var response = req.UploadValues(req.BaseAddress, "POST", req.QueryString);
+				
+				var str = System.Text.Encoding.UTF8.GetString(response);
+
 				ViewBag.response = System.Text.Encoding.UTF8.GetString(response);
+				var token = str.Substring(14,40);
+				ViewBag.token = token;
+
 			}
 			catch (Exception ex)
 			{
