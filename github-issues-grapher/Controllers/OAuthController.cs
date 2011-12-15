@@ -26,15 +26,22 @@ namespace github_issues_grapher.Controllers
 		HttpWebRequest webRequest;
 		public ActionResult callback(string code)
 		{
-			var req = new WebClient();
-			req.BaseAddress = @"https://github.com/login/oauth/access_token";
+			try
+			{
+				var req = new WebClient();
+				req.BaseAddress = @"https://github.com/login/oauth/access_token";
 
-			req.QueryString.Add("client_id", System.Configuration.ConfigurationManager.AppSettings["OAuthClientID"]);
-			req.QueryString.Add("client_secret", System.Configuration.ConfigurationManager.AppSettings["OAuthSecret"]);
-			req.QueryString.Add("code", code);
-			var response = req.UploadValues(req.BaseAddress, "POST", req.QueryString);
-
-			ViewBag.response = response;
+				req.QueryString.Add("client_id", System.Configuration.ConfigurationManager.AppSettings["OAuthClientID"]);
+				req.QueryString.Add("client_secret", System.Configuration.ConfigurationManager.AppSettings["OAuthSecret"]);
+				req.QueryString.Add("code", code);
+				var response = req.UploadValues(req.BaseAddress, "POST", req.QueryString);
+				ViewBag.response = response;
+			}
+			catch (Exception ex)
+			{
+				ViewBag.response = ex.ToString();
+			}
+			
 			return View();
 		}
 
