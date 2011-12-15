@@ -41,7 +41,7 @@ namespace github_issues_grapher.Controllers
 				var str = System.Text.Encoding.UTF8.GetString(response);
 
 				ViewBag.response = System.Text.Encoding.UTF8.GetString(response);
-				var token = str.Substring(13,39);
+				var token = str.Substring(13,40);
 				ViewBag.token = token;
 
 			}
