@@ -4,9 +4,24 @@
 }
 
 <h2>Dashboard</h2>
+<div id="nameOnly">
 <span data-bind="text: name"></span><br />
 <img data-bind="attr: {src: avatar}" />
+</div>
 <a href="#" id="GetIssues">Get Issues</a>
+
+<div id="openIssuesDiv">
+    <h2>Open Issues</h2>
+    <ul>
+	<li>Open Issues: <span data-bind="text: openIssuesCount"></span></li>
+	<li>Opened Last 7 Days: <span data-bind="text: last7days"></span> </li>
+	<li>Active Last 7 Days: <span data-bind="text: last30days"></span> </li>
+	<li>Opened Last 30 Days: <span data-bind="text: activitylast7Days"></span></li>
+    </ul> </div>
+
+
+
+</script>
 <script src="@Url.Content("~/Scripts/knockout-1.3.0beta.js")"></script>
 <script src="@Url.Content("~/Scripts/jquery.linq.js")"></script>
 <script src="@Url.Content("~/Scripts/Home.Dashboard.js")"></script>
