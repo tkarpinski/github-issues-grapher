@@ -10,15 +10,19 @@
 </div>
 <a href="#" id="GetIssues">Get Issues</a>
 
-<div id="openIssuesDiv">
-    <h2>Open Issues</h2>
+<div id="openIssuesDiv" style="display:none">
+    <h2>Open Issues <span data-bind="text: openIssuesCount"></span></h2>
     <ul>
-	<li>Open Issues: <span data-bind="text: openIssuesCount"></span></li>
 	<li>Opened Last 7 Days: <span data-bind="text: last7days"></span> </li>
-	<li>Active Last 7 Days: <span data-bind="text: last30days"></span> </li>
-	<li>Opened Last 30 Days: <span data-bind="text: activitylast7Days"></span></li>
+	<li>Active Last 7 Days: <span data-bind="text: activitylast7Days"></span> </li>
+	<li>Opened Last 30 Days: <span data-bind="text: last30days "></span></li>
     </ul> </div>
-
+<div id="closedIssuesDiv" style="display:none">
+    <h2>Closed Issues <span data-bind="text: closedCount"></span></h2>
+    <ul>
+	<li>Closed Last 7 Days: <span data-bind="text: last7days"></span> </li>
+	<li>Closed Last 30 Days: <span data-bind="text: last30days "></span></li>
+    </ul> </div>
 
 
 </script>
