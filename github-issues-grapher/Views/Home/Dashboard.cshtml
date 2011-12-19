@@ -8,7 +8,16 @@
 <span data-bind="text: name"></span><br />
 <img data-bind="attr: {src: avatar}" />
 </div>
+
+<select data-bind="foreach: orgs" id="orgsSelect">
+<option data-bind="text: login"></option>
+</select>
+
+<select data-bind="foreach: repos" id="reposSelect" style="display:none">
+<option data-bind="text: name"></option>
+</select>
 <a href="#" id="GetIssues">Get Issues</a>
+
 
 <div id="openIssuesDiv" style="display:none">
     <h2>Open Issues <span data-bind="text: openIssuesCount"></span></h2>
