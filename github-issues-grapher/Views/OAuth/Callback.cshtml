@@ -4,5 +4,9 @@
 }
 
 <h2>Callback</h2>
-@ViewBag.response
-@ViewBag.token
+<input type="hidden" value="@ViewBag.token" id="OAuthToken" />
+<script>
+	var s = $("#OAuthToken").val();
+	localStorage.setItem("OAuthToken", s);
+	document.location = "/Home/Dashboard/"
+</script>

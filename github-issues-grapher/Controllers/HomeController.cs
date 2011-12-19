@@ -15,6 +15,10 @@ namespace github_issues_grapher.Controllers
         {
             return View();
         }
+		public ActionResult Dashboard()
+		{
+			return View();
+		}
 
     }
 }
