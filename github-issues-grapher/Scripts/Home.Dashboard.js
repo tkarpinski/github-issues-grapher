@@ -71,7 +71,7 @@ var homeDashboard = (function () {
                 ko.applyBindings(vm3, document.getElementById('openIssuesDiv'));
                 $('#openIssuesDiv').show();
             });
-            $.ajax("https://api.github.com/repos/dyknow/dyknowme/issues?state=closed", { data: { "access_token": token} }).done(function (response) {
+            $.ajax("https://api.github.com/repos/" + org +"/" + repo + "/issues?state=closed", { data: { "access_token": token} }).done(function (response) {
                 var vm2 = $(response).toEnumerable();
                 var d7 = new Date();
                 d7.setDate(d7.getDate() - 7);
