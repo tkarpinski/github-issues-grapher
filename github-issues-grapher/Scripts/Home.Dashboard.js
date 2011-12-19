@@ -55,13 +55,13 @@ var homeDashboard = (function () {
         });
         $("#GetIssues").click(function () {
             var org = $('#orgsSelect').attr('value'),
-            repo = $('#reposSelect').attr('value');
+            repo = $('#reposSelect').attr('value'),
+            d7 = new Date(),
+            d30 = new Date();
+            d7.setDate(d7.getDate() - 7);
+            d30.setDate(d30.getDate() - 30);
             $.ajax("https://api.github.com/repos/" + org +"/" + repo +"/issues", { data: { "access_token": token} }).done(function (response) {
                 var vm2 = $(response).toEnumerable();
-                var d7 = new Date();
-                d7.setDate(d7.getDate() - 7);
-                var d30 = new Date();
-                d30.setDate(d30.getDate() - 30);
                 var vm3 = {};
                 vm3.openIssuesCount = vm2.Where(function (x) { return x[0].state === "open" }).Count();
                 vm3.closedCount = vm2.Where(function (x) { return x[0].state === "closed" }).Count();
@@ -73,10 +73,6 @@ var homeDashboard = (function () {
             });
             $.ajax("https://api.github.com/repos/" + org +"/" + repo + "/issues?state=closed", { data: { "access_token": token} }).done(function (response) {
                 var vm2 = $(response).toEnumerable();
-                var d7 = new Date();
-                d7.setDate(d7.getDate() - 7);
-                var d30 = new Date();
-                d30.setDate(d30.getDate() - 30);
                 var vm3 = {};
                 vm3.closedCount = vm2.Where(function (x) { return x[0].state === "closed" }).Count();
                 vm3.last7days = vm2.Where(function (x) { return Date.parse(x[0].closed_at) > d7.valueOf() }).Count();
