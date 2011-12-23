@@ -2,6 +2,7 @@
 /// <reference path="jquery.form.js"/>
 /// <reference path="knockout-1.3.0beta.debug.js"/>
 /// <reference path="jquery.linq.js"/> 
+/// <reference path="github.v3.js"/>
 /*globals jQuery, window, document*/
 
 ///<summary>
@@ -14,32 +15,23 @@ var homeDashboard = (function () {
     "use strict";
     var $ = jQuery;
     $(document).ready(function () {
-        var token = localStorage.getItem("OAuthToken");
-        var vm = {},
+        var token = localStorage.getItem("OAuthToken"),
+        vm = {},
         getReposForOrg = function (orgName) {
-            $.ajax("https://api.github.com/orgs/" + orgName + "/repos", {
-                data: { "access_token": token }
-            }).done(function (response) {
-
+            githubv3().getRepos(orgName).done(function (response) {
                 var vm2 = {};
                 vm2.repos = response;
-
                 ko.applyBindings(vm2, document.getElementById('reposSelect'));
                 $('#reposSelect').show();
             });
         };
         (function () {
-            $.ajax("https://api.github.com/user", {
-                data: { "access_token": token }
-            }).done(function (response) {
+            githubv3().getUser().done(function (response) {
                 vm.name = response.name;
                 vm.avatar = response.avatar_url;
                 ko.applyBindings(vm, document.getElementById('nameOnly'));
             });
-            $.ajax("https://api.github.com/user/orgs", {
-                data: { "access_token": token }
-            }).done(function (response) {
-
+            githubv3().getOrgs().done(function (response) {
                 var vm2 = {};
                 vm2.orgs = response;
                 ko.applyBindings(vm2, document.getElementById('orgsSelect'));
