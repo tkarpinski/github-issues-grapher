@@ -1,7 +1,7 @@
 ﻿/// <reference path="jquery-1.7.1-vsdoc.js"/>
 /// <reference path="jquery.form.js"/>
 /// <reference path="knockout-1.3.0beta.debug.js"/>
-/// <reference path="jquery.linq.js"/>
+/// <reference path="jquery.linq.js"/> 
 /*globals jQuery, window, document*/
 
 ///<summary>
