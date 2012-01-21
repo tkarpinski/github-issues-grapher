@@ -98,13 +98,13 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\Dashboard.sshtml" />
+    <Content Include="Views\Dashboard.sshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\MasterPage.sshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\Index.sshtml" />
+    <Content Include="Views\Index.sshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
