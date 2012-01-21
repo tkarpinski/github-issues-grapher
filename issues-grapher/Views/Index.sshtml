@@ -1,0 +1,9 @@
+﻿@Master['MasterPage']
+
+@Section['Content']
+
+<h2>Index</h2>
+<a href="/oauth/authorize">Log In</a>
+
+
+@EndSection
