@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Web Developer Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "github-issues-grapher", "github-issues-grapher\github-issues-grapher.csproj", "{CFF71019-A155-4A81-A66D-F266C1B044B5}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "issues-grapher", "issues-grapher\issues-grapher.csproj", "{35CB6604-2B91-4738-B0D7-12E09863BB19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CFF71019-A155-4A81-A66D-F266C1B044B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFF71019-A155-4A81-A66D-F266C1B044B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFF71019-A155-4A81-A66D-F266C1B044B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFF71019-A155-4A81-A66D-F266C1B044B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35CB6604-2B91-4738-B0D7-12E09863BB19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CB6604-2B91-4738-B0D7-12E09863BB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CB6604-2B91-4738-B0D7-12E09863BB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CB6604-2B91-4738-B0D7-12E09863BB19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
